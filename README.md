@@ -1,13 +1,28 @@
-# Deep Research
+# /deep-research
 
-A Claude Code skill that researches any topic using parallel web search agents and produces a structured, source-cited playbook.
+Research any topic. Get a sourced playbook back.
 
-## What it does
+```
+/deep-research Dario Amodei's vision for AI safety
+```
 
-1. You give it a topic
-2. It launches 3-5 parallel research agents that search the web from different angles (official docs, community blogs, social media)
-3. It synthesizes all findings into a single markdown playbook with source citations for every claim
-4. It can also update an existing playbook with new findings
+This skill launches 3-5 parallel web search agents, each covering a different angle (official sources, practitioner blogs, community discussion), then synthesizes everything into a single markdown document where every claim has a source URL.
+
+## Examples
+
+```
+/deep-research Harness Engineering for AI Agents
+/deep-research Agent-Browser architecture and protocols
+/deep-research Dario Amodei on scaling laws and AI safety
+/deep-research React Server Components best practices --file rsc-playbook.md
+/deep-research --file existing-playbook.md
+```
+
+| Input | What happens |
+|-------|-------------|
+| Just a topic | Creates `<topic-slug>.md` in your current directory |
+| Topic + `--file path.md` | Writes to the specified path |
+| `--file existing.md` only | Updates the existing playbook with new findings |
 
 ## Install
 
@@ -15,7 +30,7 @@ A Claude Code skill that researches any topic using parallel web search agents a
 npx skills add your-username/deep-research-skill
 ```
 
-Or manually:
+Or copy manually:
 
 ```bash
 mkdir -p ~/.claude/skills/deep-research
@@ -23,30 +38,50 @@ curl -o ~/.claude/skills/deep-research/SKILL.md \
   https://raw.githubusercontent.com/your-username/deep-research-skill/main/deep-research/SKILL.md
 ```
 
-## Usage
+## How it works
+
+1. **Parse** — detects whether you gave a topic, a file path, or both
+2. **Scope** — decides create vs. update mode; picks research angles
+3. **Research** — launches parallel agents with `run_in_background: true`, each searching from a different angle
+4. **Synthesize** — filters findings (drops anything without a source URL), groups by theme, writes the playbook
+5. **Verify** — reads the result to check for duplicates, missing citations, and cohesion
+
+## Output format
+
+Every playbook follows this structure:
+
+```markdown
+# Topic Title
+
+## Section Name
+Insight text. — [Source Name](https://url)
+Another insight. — [Another Source](https://url)
+
+---
+## Sources
+- [Source 1](https://url)
+- [Source 2](https://url)
+
+---
+*Captured: 2026-03-03*
+```
+
+Every claim is cited. No filler, no hedging.
+
+## Updating an existing playbook
+
+Point it at a file you've already created:
 
 ```
-/deep-research swift concurrency
-/deep-research kubernetes cost optimization --file infra-playbook.md
-/deep-research --file existing-playbook.md
+/deep-research --file agent-browser.md WebDriver BiDi protocol
 ```
 
-- **Topic only**: creates `<topic-slug>.md` in your current directory
-- **With `--file`**: writes to the specified path
-- **Existing file**: updates it with new findings (merges, doesn't overwrite)
-
-## Output
-
-A markdown playbook with:
-- Sections grouped by theme
-- Every claim cited: `[Insight]. — [Source Name](URL)`
-- A consolidated Sources list
-- A `*Captured: YYYY-MM-DD*` timestamp
+It reads the existing content, launches agents focused on the new topic, and **merges** findings into the existing sections — matching the voice and style already in the document. It never overwrites or creates a separate "Updates" section.
 
 ## Requirements
 
 - Claude Code with web search enabled
-- Works with Sonnet, Opus, and Haiku (Opus recommended for best results)
+- Works with Sonnet, Opus, and Haiku (Opus recommended for depth)
 
 ## License
 
