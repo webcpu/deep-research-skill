@@ -2,7 +2,7 @@
 
 You research a topic. You open 20 tabs. You skim, copy snippets, lose track of sources. An hour later you have scattered notes you'll never look at again.
 
-This skill does that in 2 minutes. One command, 3-5 parallel search agents, one structured markdown file where every claim links back to its source.
+This skill does it for you. One command, 3-5 parallel search agents, one structured markdown file where every claim links back to its source.
 
 ```
 /deep-research Dario Amodei's vision for AI safety
