@@ -4,8 +4,6 @@ description: Researches a topic using parallel web search agents, then creates o
 user-invocable: true
 argument-hint: "<topic> [--file path.md]"
 allowed-tools: Agent, WebSearch, WebFetch, Read, Edit, Write, Glob, Grep
-compatibility:
-  - claude-code
 license: MIT
 ---
 

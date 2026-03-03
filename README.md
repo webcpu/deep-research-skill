@@ -27,7 +27,7 @@ This skill launches 3-5 parallel web search agents, each covering a different an
 ## Install
 
 ```bash
-npx skills add webcpu/deep-research-skill
+npx skills add webcpu/deep-research-skill -a claude-code
 ```
 
 Then type `/deep-research` in Claude Code. That's it.
