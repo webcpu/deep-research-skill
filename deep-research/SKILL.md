@@ -82,7 +82,6 @@ Launching [N] research agents in parallel:
   1. [Agent 1 angle]
   2. [Agent 2 angle]
   ...
-This typically takes 1-2 minutes.
 ```
 
 Use the **Agent tool** to launch agents in parallel. Each agent MUST use `subagent_type: general-purpose` and `run_in_background: true`.
