@@ -82,8 +82,7 @@ It reads the existing content, launches agents focused on the new topic, and **m
 
 ## Requirements
 
-- Claude Code with web search enabled
-- Best results with Opus
+- Claude Code with Opus
 
 ## License
 
