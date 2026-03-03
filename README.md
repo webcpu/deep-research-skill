@@ -70,6 +70,27 @@ Another insight. — [Another Source](https://url)
 
 Every claim is cited. No filler, no hedging.
 
+## Example output
+
+`/deep-research Apple Studio Display XDR` produced a 14-section playbook with 36 sources and ~65 integrated findings:
+
+- What It Is — Overview, pricing, availability
+- Display Specifications — Full comparison table (XDR vs Studio Display vs Pro Display XDR)
+- Configurations and Pricing — All SKUs, nano-texture analysis
+- Connectivity — Thunderbolt 5, daisy-chaining, charging watts
+- 120Hz Compatibility — Which Macs get 120Hz vs 60Hz
+- Professional Reference Modes — 16 built-in presets, custom modes, DICOM medical imaging
+- Camera, Audio, and Edge Light — Webcam history, speakers, virtual ring light
+- The Pro Display XDR Trade-Off — Gains and losses vs the discontinued 32" model
+- Known Issues and Gotchas — Stand lock-in, power cable, cable length, thermal throttling, firmware bricking, sleep/wake bugs
+- Alternatives and Competitors — 6 alternatives with pricing
+- Who Should Buy What — Decision framework by use case and Mac chip
+- Calibration and Color Accuracy — Factory deltaE data, hardware calibration
+- Compatibility Requirements — OS and hardware requirements
+- Environmental — Recycled materials
+
+See the full output: [examples/apple-studio-display-xdr.md](examples/apple-studio-display-xdr.md)
+
 ## Updating an existing playbook
 
 Point it at a file you've already created:
