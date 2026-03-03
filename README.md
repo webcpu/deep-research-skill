@@ -1,12 +1,14 @@
 # /deep-research
 
-Research any topic. Get a sourced playbook back.
+You research a topic. You open 20 tabs. You skim, copy snippets, lose track of sources. An hour later you have scattered notes you'll never look at again.
+
+This skill does that in 2 minutes. One command, 3-5 parallel search agents, one structured markdown file where every claim links back to its source.
 
 ```
 /deep-research Dario Amodei's vision for AI safety
 ```
 
-This skill launches 3-5 parallel web search agents, each covering a different angle (official sources, practitioner blogs, community discussion), then synthesizes everything into a single markdown document where every claim has a source URL.
+What you get back: a playbook you can keep, share, and update later — not a chat response that disappears when you close the window.
 
 ## Examples
 
