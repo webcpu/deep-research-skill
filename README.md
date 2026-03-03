@@ -12,9 +12,9 @@ This skill launches 3-5 parallel web search agents, each covering a different an
 
 ```
 /deep-research Harness Engineering for AI Agents
-/deep-research Agent-Browser architecture and protocols
-/deep-research Dario Amodei on scaling laws and AI safety
-/deep-research React Server Components best practices --file rsc-playbook.md
+/deep-research Agent-Browser
+/deep-research Dario Amodei
+/deep-research React Server Components --file rsc.md
 /deep-research --file existing-playbook.md
 ```
 
@@ -27,15 +27,17 @@ This skill launches 3-5 parallel web search agents, each covering a different an
 ## Install
 
 ```bash
-npx skills add your-username/deep-research-skill
+npx skills add webcpu/deep-research-skill
 ```
+
+Then type `/deep-research` in Claude Code. That's it.
 
 Or copy manually:
 
 ```bash
 mkdir -p ~/.claude/skills/deep-research
 curl -o ~/.claude/skills/deep-research/SKILL.md \
-  https://raw.githubusercontent.com/your-username/deep-research-skill/main/deep-research/SKILL.md
+  https://raw.githubusercontent.com/webcpu/deep-research-skill/main/deep-research/SKILL.md
 ```
 
 ## How it works
@@ -81,7 +83,7 @@ It reads the existing content, launches agents focused on the new topic, and **m
 ## Requirements
 
 - Claude Code with web search enabled
-- Works with Sonnet, Opus, and Haiku (Opus recommended for depth)
+- Best results with Opus
 
 ## License
 
