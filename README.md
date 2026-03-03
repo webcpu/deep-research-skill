@@ -1,14 +1,14 @@
 # /deep-research
 
-You research a topic. You open 20 tabs. You skim, copy snippets, lose track of sources. An hour later you have scattered notes you'll never look at again.
+Google gives you sources but no synthesis — you drown in tabs. ChatGPT gives you synthesis but no sources — you can't verify anything, and it vanishes when you close the window.
 
-This skill does it for you. One command, 3-5 parallel search agents, one structured markdown file where every claim links back to its source.
+This skill gives you both. One command, one markdown file where every claim links back to its source.
 
 ```
 /deep-research Dario Amodei's vision for AI safety
 ```
 
-What you get back: a playbook you can keep, share, and update later — not a chat response that disappears when you close the window.
+You get a structured playbook you can keep, share, and update later.
 
 ## Examples
 
