@@ -106,6 +106,7 @@ It reads the existing content, launches agents focused on the new topic, and **m
 ## Requirements
 
 - Claude Code with Opus
+- **Claude Max recommended** — each run launches 3-5 parallel Opus agents. Token usage is higher than you'd expect.
 
 ## License
 
