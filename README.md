@@ -10,7 +10,7 @@ This skill gives you both. One command, one markdown file where every claim link
 
 You get a structured playbook you can keep, share, and update later.
 
-> **Heads up:** Each run launches 3-5 parallel Opus agents. Token usage is higher than you'd expect. Best suited for Claude Max subscribers.
+> **Heads up:** Each run launches 3-5 parallel Opus agents. Token usage is higher than you'd expect. Best suited for **Claude Max subscribers**.
 
 ## Examples
 
