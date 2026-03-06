@@ -3,7 +3,7 @@ name: deep-research
 description: Researches a topic using parallel web search agents, then creates or updates a structured markdown playbook with sourced practitioner insights. Auto-invoke when user says "deep research", "research playbook", "create a playbook about", "update playbook", or asks to deeply research a topic and write findings into a document. Do NOT invoke for simple web searches, quick questions, or general research that does not produce a persistent playbook file.
 user-invocable: true
 argument-hint: "<topic> [--file path.md]"
-allowed-tools: Agent, WebSearch, WebFetch, Read, Edit, Write, Glob, Grep
+allowed-tools: Agent, WebSearch, WebFetch, Read, Edit, Write, Glob, Grep, AskUserQuestion
 license: MIT
 ---
 
@@ -35,6 +35,17 @@ Examples:
 - `/deep-research kubernetes cost optimization --file infra-playbook.md` → topic: "kubernetes cost optimization", file: `infra-playbook.md`
 - `/deep-research --file docs/playbook.md` → topic: inferred from existing file, file: `docs/playbook.md`
 - `/deep-research docs/react-hooks.md state management` → topic: "state management", file: `docs/react-hooks.md`
+
+## Step 0.5: Clarify Assumptions
+
+Before proceeding, use **AskUserQuestion** if any of these apply:
+
+- **Ambiguous topic**: The topic has multiple common meanings (e.g., "swift", "python", "spring", "agent", "mercury"). Ask which one.
+- **Overly broad topic**: The topic is too wide to research well without focus (e.g., "machine learning", "AI safety"). Ask what aspect or audience matters.
+- **Missing context that changes results**: The topic implies a specific context the user hasn't stated (e.g., cloud provider, programming language, audience level).
+- **Update mode without topic**: If inferring the research focus from an existing file, confirm the inferred focus before launching agents.
+
+Skip this step if the topic is specific and unambiguous.
 
 ## Step 1: Read or Create Playbook
 
