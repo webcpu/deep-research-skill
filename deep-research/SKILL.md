@@ -84,7 +84,7 @@ Launching [N] research agents in parallel:
   ...
 ```
 
-Use the **Agent tool** to launch agents in parallel. Each agent MUST use `subagent_type: general-purpose` and `run_in_background: true`.
+Use the **Agent tool** to launch agents in parallel. Each agent MUST use `subagent_type: general-purpose` and `run_in_background: false`.
 
 **Constructing the prompt for each agent** — MUST include:
 
